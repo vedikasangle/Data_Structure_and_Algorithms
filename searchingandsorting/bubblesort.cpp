@@ -8,9 +8,11 @@ int main(){
    //smallest element comes on its correct position by default
    //so only compare 4 elements 
     for(int i = 1; i<=tb-1 ; i++){
+        cout<<i<<endl; //loop runs 4 times 
     //sabse bada element apne jagah pe 4 2 1 3 5 
     for(int j = 0 ; j<=tb-1-i; j= j +1 ) {  //why not j<=tb -2
         if(arr[j]>arr[j+1]){
+            //1) swap using formula
             swap(arr[j],arr[j+1]);
         }
     }
