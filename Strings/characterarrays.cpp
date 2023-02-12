@@ -63,7 +63,7 @@ int main(){
     // cin>>ch; 
     ch = cin.get();
     int i = 0; 
-    while(ch!='$'){ //here we write the delimiter($ in our case)
+    while(ch!='$'){ //here we write the delimiter($ in our case) ; when delimiter is not given , it is by default '\n'
         arr[i] = ch;
         i++;
         // cin>>ch; //cin ignores spaces , but we dont want that to happen 
