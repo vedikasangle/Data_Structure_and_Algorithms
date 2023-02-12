@@ -33,35 +33,47 @@ int main(){
     // cout<<arr<<endl;
 
     //fifth way 
-    char arr[100];
+    // char arr[100];
     // int n ; 
     // cin>>n;
     // for(int i = 0 ; i <=n -1 ; i++){
     //     cin>>arr[i];
     // }
+    //this above loop is same as the below
     //cin>>arr; //but in this white spaces are ignored 
+
+
     //cin.getline(arr,100); //used so that white spaces 
+    //in this the third argument is not given, hence the default third argument taken as '\n'
     // for(int i = 0 ; i <=n -1 ; i++){
     //     cout<<arr[i]<<" ";
     // }
+    //this above loop is same as the below
     //cout<<arr<<endl;
 
-    //delimiter
-    cin.getline(arr,100,'$'); //this will take input until $ sign only
-    cout<<arr<<endl; 
+    //delimiter($ in this case )
+    //by default delimiter is '/n' , if only two arguments are given int cin.getline
+    // char arr[100]; 
+    // cin.getline(arr,100,'$'); //this will take input until $ sign only
+    // cout<<arr<<endl; 
 
-    // getline real code
+    // getline real code of this line : cin.getline(arr,100,'$'); ==> 
     char arr[100];
     char ch ; 
-    cin>>ch; 
+    // cin>>ch; 
     ch = cin.get();
     int i = 0; 
-    while(ch!='n'){
+    while(ch!='$'){ //here we write the delimiter($ in our case)
         arr[i] = ch;
         i++;
-        //cin>>ch;
+        // cin>>ch; //cin ignores spaces , but we dont want that to happen 
         ch = cin.get();
     }
+    arr[i] = '\0'; //if this line is not written garbage values are printed till we get '\0'
+    //without above line => output we got :heyu@+∙
+    cout<<arr<<endl;
+
+    //
 
     return 0 ; 
 
