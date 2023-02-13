@@ -3,13 +3,11 @@ using namespace std ;
 
 //using single array
 
-int lengthofarr(char arr[100]){
-    // int i = 0 ; 
+int lengthofarr(char arr[100]){ 
     int countofchar = 0 ;
     
-    while(arr[countofchar]!='\0'){//arr[i]!='\0'
+    while(arr[countofchar]!='\0'){
     countofchar++;
-    // i++;
     }
     return countofchar;
 }
@@ -22,13 +20,14 @@ void reversestring(char arr[100]){
         swap(arr[i],arr[j]);
         i++;
         j--;
+        //swap(arr[i++],arr(j--)); =>same as above 
     }
    
 }
 
 int main(){
     char arr[100];
-    cin.getline(arr,100);
+    cin.getline(arr,100);//he llo
     
     reversestring(arr);
     cout<<arr<<endl;
