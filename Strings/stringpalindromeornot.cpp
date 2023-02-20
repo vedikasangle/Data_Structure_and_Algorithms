@@ -38,5 +38,7 @@ int main (){
     else{
         cout<<"No Palindrome"<<endl;   
     }
+    
+    return 0 ; 
 
 }
