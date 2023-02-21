@@ -30,5 +30,7 @@ int main(){
     // }
     // arr[i] = '\0'; //cin or even cin.getline puts \0 at the end 
     // cout<<arr<<endl;
+    
+    return 0 ; 
 
 }
