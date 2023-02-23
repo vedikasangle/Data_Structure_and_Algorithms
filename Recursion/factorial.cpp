@@ -10,7 +10,7 @@ int fact(int n ){//5
     //recursive case
 
     //without storing 
-    return n*fact(n-1);
+    return n*fact(n-1); //fact(n-1) will give right answer is pure assumption 
 
 }
 
@@ -18,14 +18,14 @@ int main(){
     int n ; 
     cin>>n;
 
-    fact(n);
+    cout<<fact(n)<<endl;
 
 
     return 0 ; 
 }
 
-// //with storing
+//     with storing
 //     int chotans = fact(n-1);//fact(4) //pure assumption -->24
-//     //muje n * chotoans
+//     muje n * chotoans
 //     int fans = n*chotans;//5*24 -->120
 //     return fans;
