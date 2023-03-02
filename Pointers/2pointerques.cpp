@@ -30,6 +30,7 @@ void solve(){
 
     }
 }
+return 0 ;
 }
 
 
