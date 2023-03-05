@@ -1,10 +1,14 @@
 #include<iostream>
 using namespace std;
 
-subsequences(char inp[10000],int i , char out[10000], int j ){
+void subsequences(char inp[10000],int i , char out[10000], int j ){
     //base case 
-
-
+    if(inp[i]=='\0'){
+        out[j] = '\0';
+        cout<<out<<endl;
+        return ; 
+    }
+    
     //rec case 
     //with a 
     out[j] = inp[i];
