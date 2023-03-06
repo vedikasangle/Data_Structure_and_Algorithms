@@ -1,11 +1,14 @@
 #include<iostream>
 using namespace std;
 
+int co = 0 ; 
+
 void permutation(char inp[10000],int i ){
 
     //base case 
     if(inp[i]=='\0'){
         cout<<inp<<endl;//abc
+        co++;
         return ; 
     }
 
@@ -23,6 +26,8 @@ int main(){
     cin>>inp;//"abc"
 
     permutation(inp,0);
+
+    cout<<"Total Permutation v"<<co<<endl;
 
     return 0;
 }
