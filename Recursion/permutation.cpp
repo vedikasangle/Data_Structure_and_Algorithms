@@ -13,7 +13,7 @@ void permutation(char inp[10000],int i ){
     for(int j = i ; inp[j] != '\0'; j++){
     swap(inp[i],inp[j]);//swap 
     permutation(inp,i+1);//abc acb
-    swap(inp[i],inp[j]);//unswap 
+    swap(inp[i],inp[j]);//unswap //!backtracking
     }
 }
 
