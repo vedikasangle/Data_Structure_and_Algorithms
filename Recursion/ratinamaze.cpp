@@ -1,9 +1,12 @@
 #include<iostream>
 using namespace std;
 
-bool ratinamaze(char maze[4][5], int sol[4][4],int i , int j,int rows,int cols){
+int c = 0 ;
+
+bool ratinamaze(char maze[4][5], int sol[4][4],int i,int j,int rows,int cols){
     //base case 
-    if(i == rows-1 and j ==cols-1){
+
+    if(i==rows-1 and j==cols-1){
         sol[i][j] = 1 ; 
 
         //print my solution matrix
@@ -13,57 +16,51 @@ bool ratinamaze(char maze[4][5], int sol[4][4],int i , int j,int rows,int cols){
             }
             cout<<endl;
         }
-        return true ; 
+        // return true ; 
+        c++;
+        
+        //multiple paths
+        sol[i][j] = 0 ;  
+        return false; //path mila, but we say solution hi nahi mila(type of fooling)
     } 
 
 
     //rec case 
-    sol[i][j] = 1 ;
+
+    sol[i][j] = 1 ;//src will be unblocked
 
     //forward 
     if(j<=cols-2 and maze[i][j+1] != 'B'){
-        bool kyaaagrkaansmila = ratinamaze(maze,sol,i,j+1,rows,cols);
-        if(kyaaagrkaansmila == true){
+        bool kya_aage_ka_ans_mila = ratinamaze(maze,sol,i,j+1,rows,cols);
+        if(kya_aage_ka_ans_mila == true){
             return true ; 
         }
     }
 
     //downward
-        if(j<=rows-2 and maze[i+1][j] != 'B'){
-        bool kyaaagrkaansmila = ratinamaze(maze,sol,i,j+1,rows,cols);
-        if(kyaaagrkaansmila == true){
-            return true ; 
+    if(j<=rows-2 and maze[i+1][j] != 'B'){
+    bool kya_aage_ka_ans_mila = ratinamaze(maze,sol,i,j+1,rows,cols);
+    if(kya_aage_ka_ans_mila == true){
+        return true ; 
         }
-        }
+    }
 
-        sol[i][j] = 0; //backtracking step 
-        return false ;  
-
+    sol[i][j] = 0; //backtracking step(imp) 
+    return false ;  
 }
 
 int main(){
     char maze[4][5] = {
-        "UBUU",
         "UUUU",
-        "BBBU",
-        "UBBU"
+        "UUUU",
+        "BBUU",
+        "UBUU"
     };
 
     int sol[4][4] = {0};
 
-    // if(ratinamaze(maze,sol,0,0,4,4) == true){
-    //     cout<<"True";
-    // }
-    // else{
-    //     cout<<"False";
-    // }
-
     ratinamaze(maze,sol,0,0,4,4);
-
-
-
-
-    
+    cout<<"Total Paths: "<<c<<endl;
     
     return 0;
 }
